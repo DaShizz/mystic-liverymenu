@@ -4,7 +4,7 @@ local liverymenu = nativetheme and MenuV:CreateMenu('Livery Menu', '', 'topright
 
 RegisterCommand('livery', function()
     local PlayerData = QBCore.Functions.GetPlayerData()
-    if PlayerData.job.name == 'police' then
+    if PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' then
         if IsPedInAnyVehicle(PlayerPedId()) then
             MenuV:OpenMenu(liverymenu)
         end
